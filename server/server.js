@@ -11,16 +11,20 @@ const { Worker } = require("worker_threads");
 // Increase the stack trace limit for better debugging
 Error.stackTraceLimit = Infinity;
 
-const envPath = path.resolve(__dirname, ".env");
+const envPath = path.join(__dirname, ".env");
 
+// 2. ONLY try to read it if it actually exists
 if (fs.existsSync(envPath)) {
-  const envConfig = dotenv.parse(fs.readFileSync(envPath));
-  for (const k in envConfig) {
-    process.env[k] = envConfig[k];
+  try {
+    const envConfig = dotenv.parse(fs.readFileSync(envPath));
+    for (const k in envConfig) {
+      process.env[k] = envConfig[k];
+    }
+    console.log("Loaded environment variables from server/.env file");
+  } catch (err) {
+    console.error("Error parsing .env file:", err);
   }
-  console.log("Loaded environment variables from .env file");
 } else {
-  console.log(".env file not found; relying on system environment variables");
 }
 
 const GLOBAL = require("./loaders/loader.js");
