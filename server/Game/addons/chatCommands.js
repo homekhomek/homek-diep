@@ -196,7 +196,7 @@ let commands = [
   {
     command: ["team"],
     description: "Change your team.", // player teams are -1 through -8, dreads are -10, room is -100 and enemies is -101
-    level: 0,
+    level: 2,
     hidden: false,
     run: ({ args, socket }) => {
       if (!args[0]) {
@@ -214,7 +214,7 @@ let commands = [
     command: ["developer", "dev"],
     description:
       "Developer commands, go troll some players or just take a look for yourself.",
-    level: 0,
+    level: 2,
     run: ({ socket, args, gameManager }) => {
       let sendAvailableDevCommandsMessage = () => {
         let lines = [
