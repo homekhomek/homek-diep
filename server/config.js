@@ -1,8 +1,8 @@
 module.exports = {
   // Main Menu
   main_menu: "index.html", // Where the main menu is located (in the /public folder).
-  host: "homek.servebeer.com:3000", // Game server domain. If the host is 'localhost:NUMBER', the NUMBER must be the port setting.
-  port: 3000, // Which port to run the web server on.
+  host: process.env.HOST || "localhost:3000", // Reads from .env or defaults to your hardcoded value
+  port: process.env.PORT || 3000, // Azure requires using the environment port
 
   // Server
   visible_list_interval: 250, // How often to update the list of the entities that players can see. Has effects of when entities are activated.
@@ -77,7 +77,7 @@ module.exports = {
   },
 
   level_cap: 45, // Maximum normally achievable level.
-  level_cap_cheat: 45, // Maximum level via the level-up key and auto-level-up.
+  level_cap_cheat: 0, // Maximum level via the level-up key and auto-level-up.
 
   skill_cap: 9, // Default skill caps.
   tier_cap: 9, // Amount of tank tiers.
