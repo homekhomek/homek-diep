@@ -41,6 +41,8 @@ module.exports = {
   // Map
   map_tile_width: 420,
   map_tile_height: 420,
+  roomWidth: 5,
+  roomHeight: 5,
 
   // The message that appears once a player spawns.
   spawn_message:
@@ -236,5 +238,5 @@ module.exports = {
   spawn_confinement: {},
 
   // Room setup
-  room_setup: ["room_default"],
+  room_setup: ["room_teams_old"],
 };
