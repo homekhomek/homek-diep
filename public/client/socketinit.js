@@ -877,7 +877,7 @@ let incoming = async function (message, socket) {
         // welcome to the game
         if (m[0]) {
           // Ask to get the room data first
-          socket.talk("s", "", 1, 0, false);
+          socket.talk("s", global.playerName, 1, 0, false);
         }
       }
       break;
