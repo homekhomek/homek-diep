@@ -1366,7 +1366,7 @@ class socketManager {
       };
     }
     if (Config.mode == "tdm" || Config.tag) {
-      if (name) {
+      if (name && (name.includes("[Blue]") || name.includes("[Red]"))) {
         console.log(name);
         if (name.includes("[Blue]")) {
           player.team = -1;

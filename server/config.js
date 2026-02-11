@@ -147,21 +147,18 @@ module.exports = {
   enemy_types_nest: [
     // Possible enemy food types in the nest
     [1, [[1, "crasher"]]],
-    [
-      1 / 20,
-      [
-        [1, "sentryGun"],
-        [1, "sentrySwarm"],
-        [1, "sentryTrap"],
-      ],
-    ],
+    [1 / 8, [[1, "sentryGun"]]],
   ],
-
+  /*
   food_cap: 100, // Maximum number of regular food at any time.
   food_cap_nest: 15, // Maximum number of nest food at any time.
   enemy_cap_nest: 10, // Maximum number of enemy nest food at any time.
   food_group_cap: 6, // Number of foods that random food groups spawn with
-
+*/
+  food_cap: 150, // Maximum number of regular food at any time.
+  food_cap_nest: 20, // Maximum number of nest food at any time.
+  enemy_cap_nest: 15, // Maximum number of enemy nest food at any time.
+  food_group_cap: 6, // Number of foods that random food groups spawn with
   // Bosses
   bosses_spawn: false,
   boss_spawn_cooldown: 260, // The delay (in seconds) between boss spawns.
